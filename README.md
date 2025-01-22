@@ -17,7 +17,7 @@ In its simplest form, which is also the most common usage, an AI agent is (1) a 
 ![Agent](./images/0-what_is_an_agent.png)
 
 ###	Reminder: potential of AI Agent in the future
-RThe next step of AI agents is often presented as AGI (Artificial General Intelligence) and ASI (Artificial Superior Intelligence). They are machines that remember previous transitions, evaluate past results and compare with a goal, eventually change the evaluation functions used to reach the goal or even decide to change intermediate goals to fulfill a larger planning strategy. In short, they would replace humans and be better in executing their mission. 
+The next step of AI agents is often presented as AGI (Artificial General Intelligence) and ASI (Artificial Superior Intelligence). They are State Machines that remember previous transitions, evaluate past results and compare with a goal, eventually change the evaluation functions used to reach the goal or even decide to change intermediate goals (the transition table) to fulfill a larger planning strategy. In short, they would replace humans and be better in executing their mission. 
 
 Such machines are far from being convincingly achieved. However, Eliza is one step forward towards AGI.
 ![AI Agent](./images/1-AI_Update_2024.png)
@@ -35,6 +35,7 @@ The following workflow is deducted from reading the code of Eliza. It may contai
 ![Eliza Execution](./images/4-ElizaOS_Workflow.png)
 
 ## Components of Eliza
+The following description of components is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.
 ###	Eliza Classical State Machine Components
 -	**Agent runtime**: watches Provider for external events, analyzes input, assesses response, triggers action, manages state transition
 -	**Provider**: injects into Eliza external data and real-time information (events),
