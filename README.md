@@ -1,68 +1,79 @@
 # Reading Notes of ElizaOS
 (Jan 2025)
 ##	Executive Summary
-This document contains short working notes when studying the open-source AI Agent creation framework named Eliza0S. This framework in JavaScript has been released by the DAO ai16z on September 2024 and its github repository has already received 14.000 stars beginning January 2025, much faster than any other AI agent frameworks.
+This document contains short working notes when studying the AI Agent creation framework named Eliza0S. Its agents can call on blockchain transactions. 
+
+This open-source framework in JavaScript has been released by the DAO ai16z (Distributed Anonymous Organization) on September 2024 and its github repository has already received 14.000 stars beginning January 2025, much faster than any other AI agent frameworks.
 ![Eliza github star history](./images/Eliza_star-history-2025119.png)
 - Source code: https://github.com/elizaos/eliza
 - Documentation: https://elizaos.github.io/eliza/docs/intro/
 
-The name ElizaOS means that one can use Eliza framework (building blocks) to make AI Agents and then execute them in the ElizaOS runtime environment.
-This exploration paper is done in the context of Machu Picchu: https://kvutien-yes.medium.com/project-machu-picchu-white-paper-2024-part-1-735b60c55a92
+The name ElizaOS hints that one can use Eliza framework building blocks to create AI Agents and then execute them in the ElizaOS runtime environment.
+
+The current exploration paper is done in the context of Machu Picchu: https://kvutien-yes.medium.com/project-machu-picchu-white-paper-2024-part-1-735b60c55a92
 
 ###	Reminder: what is an agent?
-In its simplest form, which is also the most common usage, an AI agent is a Finite State Machine that uses Artificial Intelligence to "understand" events triggering state transitions. Below is an agent in general.
+In its simplest form, which is also the most common usage, an AI agent is (1) a **Finite State Machine** that (2) uses **Artificial Intelligence** to "understand" events triggering its state transitions. The diagrams below shows an agent in general and an example of state machine controlling a turnstile door. A Finite State Machine can be implemented using simple electrical relays, using no programming. AI-powered agents is the next state beyond "dumb" Finite State Machines. 
 ![Agent](./images/0-what_is_an_agent.png)
 
-###	Reminder: an AI Agent at large
-Beyond Finite State Machine agents, the next step of AI-powered agents is often presented as AGI (Artificial General Intelligence) and ASI (Artificial Superior Intelligence). They are machines that remember previous transitions, evaluate past results and compare with a goal, eventually change the evaluation functions used to reach the goal or even decide to change intermediate goal to fulfill a planning strategy. In short, they would replace humans and be better in executing their mission. 
+###	Reminder: potential of AI Agent in the future
+RThe next step of AI agents is often presented as AGI (Artificial General Intelligence) and ASI (Artificial Superior Intelligence). They are machines that remember previous transitions, evaluate past results and compare with a goal, eventually change the evaluation functions used to reach the goal or even decide to change intermediate goals to fulfill a larger planning strategy. In short, they would replace humans and be better in executing their mission. 
 
-Such machines are far from being convincing achieved.
+Such machines are far from being convincingly achieved. However, Eliza is one step forward towards AGI.
 ![AI Agent](./images/1-AI_Update_2024.png)
-Eliza is however one step forward towards AGI.
-## Components of Eliza
+
+## Eliza High Level Architecture and Workflow
+### Eliza major functional blocks
+The following drawing, from Eliza documentation, shows the major functional blocks of Eliza.
 ![Eliza Architecture](./images/2-Eliza_Architecture.png)
-###	Classical State Machine Components in Eliza
--	Agent runtime: watch Provider for external events, analyze input, assess response, trigger action, manage state transition
--	Provider: injects into Eliza external data and real-time information (events),
--	Action System: extensible system to customize the agent
--	Database Adapter: memorize the state
+
+### Eliza Execution Workflow
+The following workflow is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.
+![Eliza Execution](./images/4-ElizaOS_Workflow.png)
+
+## Components of Eliza
+###	Eliza Classical State Machine Components
+-	**Agent runtime**: watches Provider for external events, analyzes input, assesses response, triggers action, manages state transition
+-	**Provider**: injects into Eliza external data and real-time information (events),
+-	**Action System**: extensible system to customize the agent
+-	**Database Adapter**: memorizes the state
 ###	IA Variants in Eliza of State Machine Components
--	Database Adapter: memorize the AI embeddings, previous responses and their evaluations
--	Character System: personality management. JSON-formatted data to define an AI behavior, similar to system prompts in a chatbot, IA model to analyze inputs, generate outputs (state transition and action) and evaluate goal adequation
--	Client: interface to social media like Telegram, X/Twitter, or custom external systems
--	Model Provider: define IA model (GPT, Claude, Mistral, Llama, DeepSeek, Qwen, Phi-4 etc.)
--	Vector database: store embeddings of character, inputs, past responses, past states etc.
--	Boredom Provider: calculate the level of boredom of an agent to modulate responses
--	Conversation Flow: evaluation of appropriateness of actions, modulation like ignore input, terminate conversation
--	Evaluator: determine appropriateness of input, responses with respect to goal and internal ethics
+-	**Database Adapter**: additional function to memorize the AI embeddings, the previous responses and their evaluations
+-	**Character System**: personality management. JSON-formatted data to define an AI behavior. Similar to system prompts in a chatbot, serves to the IA model to analyze inputs, generate outputs (state transition and action) and evaluate goal adequation
+-	**Client**: interface to social media like Telegram, X/Twitter, or custom external systems
+-	**Model Provider**: defines the IA model to use to infer answers from events (GPT, Claude, Mistral, Llama, DeepSeek, Qwen, Phi-4 etc.)
+-	**Vector database**: stores embeddings of character, inputs, past responses, past states etc.
+-	**Boredom Provider**: calculates the level of boredom of an agent to modulate responses
+-	**Conversation Flow**: evaluate the appropriateness of actions, modulates responses like ignore input or even terminate conversation
+-	**Evaluator**: determines appropriateness of input, responses with respect to goal and internal ethics
 ###	Eliza Specific Components
--	Plugins: extensions to Agent (Evaluator, Action, Character). 
+-	**Plugins**: extensions to Agent (Evaluator, Action, Character). 
 -	For example, image generator, NodeJS services, manage temporal context, assess factual accuracy of message content, blockchain access, wallet management, DeFi trader, mass payments, fungible and non-fungible tokens, TEE cybersecurity execution environment, webhooks to blockchain events etc.
 ###	Eliza Package Dependencies
 ![Eliza Packages](./images/3-Pack_Depend.png)
-### Eliza Execution Workflow
-![Eliza Execution](./images/4-ElizaOS_Workflow.png)
 
+##	 Development using Eliza Framework
+**Disclaimer**: This is not yet a programming tutorial, but are only reading notes. A tutorial will be written after some development done with the framework.
 
-##	Eliza Development
-**Disclaimer**: This is not a tutorial but only reading notes. A tutorial will be written after some development done with the framework.
-
-The following reading notes were written with results from human intelligence, supported by the AI tool Google NotebookLM: https://notebooklm.google.com/
+The following reading notes were written using human intelligence, supported by the AI tool Google NotebookLM: https://notebooklm.google.com/
 ###	Deployment of pre-built Agents
 Among the illustrative AI agents that ai16z team has built using Eliza, there are an AI agent doing DeFi trading on the Solana blockchain and an AI agent to post on Twitter. Based on these examples, other agents can be developed to accomplish other tasks.
 
-The repository https://github.com/elizaos/eliza-starter.git deploys locally in Docker an agent to post tweets. This deployment is very clean and is done inside a Docker virtual machine so that it does not pollute your local machine. You can execute blindly the instructions. However, if you want to understand what you are doing, here is how.
+The repository https://github.com/elizaos/eliza-starter.git deploys locally in Docker an agent to post tweets. There has been a lot of YouTube videos showing this process. The deployment script is very clean and deploys inside a Docker virtual machine so that the demo agent does not pollute your local machine. 
 
-The README file of the Eliza repository https://github.com/elizaOS/eliza/tree/develop explains the starter Twitter agent step by step. We will not explain each step but instead will describe how you can make NotebookLM explain it. I have tested this process.
--	In your browser, open NotebookLM using the link above. 
--	Create a new Notebook.
--	Add to the sources of the Notebook the web pages that describe the Core Concepts of Eliza: https://elizaos.github.io/eliza/docs/core/characterfile/ and succeeding pages: Agents, Providers, Actions
--	Add to the sources of the Notebook the web pages that describe the Packages of Eliza: https://elizaos.github.io/eliza/docs/packages/ and succeeding pages: Core Package, Database Adapter Package, Client Packages, Agent Packages, Plugin System Packages.
--	From these sources, you can ask NotebookLM to explain each step in the README file and install and run a Tweeter pre-built agent. Alternatively, there are also many YouTube videos showing that.
+You can execute blindly the instructions. However, if you want to understand what you are doing, here is how.
+
+The README file of the Eliza repository (https://github.com/elizaOS/eliza/tree/develop) explains the starter Twitter agent step by step. We will not explain each step but instead will describe how you can make NotebookLM explain it.
+-	In your browser, **open NotebookLM** using the link above. 
+-	Create a **new Notebook**.
+-	**Add as sources** of the Notebook the web pages that describe the Core Concepts of Eliza (https://elizaos.github.io/eliza/docs/core/characterfile/) and succeeding web pages: Agents, Providers, Actions
+-	**Add as sources** of the Notebook the web pages that describe the Packages of Eliza: https://elizaos.github.io/eliza/docs/packages/ and succeeding pages: Core Package, Database Adapter Package, Client Packages, Agent Packages, Plugin System Packages.
+-	From these sources, you can **ask NotebookLM to explain** each step in the README file and install and run a Tweeter pre-built agent. Alternatively, there are also many YouTube videos showing that.
+
 ###	Agents Customization – Configuration Parameters
-The easiest customization of an Eliza agent is its character. This is reminiscent of the "system prompt" in a chatbot that is prefixed to each further prompt to modulate the chatbot resulting answer.
+Once comfortable with the starter agent, you can start making your own custom agent. The easiest customization of an Eliza agent is its character. This is reminiscent of the "system prompt" in a chatbot that is prefixed to each further prompt to modulate the chatbot resulting answer.
 
-When creating a new AgentRuntime instance, the character configuration is passed as a parameter, as shown in this example:
+When creating a new ``AgentRuntime`` instance, the character configuration is read as a parameter, as shown in this example:
 ``` javascript
 const runtime = new AgentRuntime({
   token: "auth-token",
@@ -72,21 +83,21 @@ const runtime = new AgentRuntime({
   // ...other configurations
 });
 ```
-Therefore, the character file (characterConfig) is loaded at the very beginning of the agent's workflow, defining its persona and behavior before any interactions or actions take place.
+We see in the above code that the character file (``characterConfig``) is loaded at the very beginning of the agent's workflow, defining its persona and behavior before any interactions or actions take place.
 
 Each key in this JSON object characterConfig represents a specific aspect of the character's configuration:
--	"name": The character's display name.
--	"modelProvider": The AI model provider used to power the character.
--	"clients": An array of supported client types.
--	"bio": The character's background information.
--	"lore": Backstory elements that shape the character's persona.
--	"messageExamples": Sample conversations that demonstrate the character's communication style.
--	"postExamples": Examples of social media posts that represent the character's online presence.
--	"topics": Areas of interest or expertise.
--	"style": Guidelines for the character's communication style across different contexts.
--	"adjectives": Words that describe the character's traits.
--	"settings": Additional configuration settings, such as model specifications and voice settings.
-As an example, here is an extract of the character "trump". See the complete file in eliza/characters/trump.character.json. The data is extracted automatically by AI from the tweet archives.
+-	"**name**": The character's display name.
+-	"**modelProvider**": The AI model provider used to power the character.
+-	"**clients**": An array of supported client types.
+-	"**bio**": The character's background information.
+-	"**lore**": Backstory elements that shape the character's persona.
+-	"**messageExamples**": Sample conversations that demonstrate the character's communication style.
+-	"**postExamples**": Examples of social media posts that represent the character's online presence.
+-	"**topics**": Areas of interest or expertise.
+-	"**style**": Guidelines for the character's communication style across different contexts.
+-	"**adjectives**": Words that describe the character's traits.
+-	"**settings**": Additional configuration settings, such as model specifications and voice settings.
+As an example, here is an extract of the character "trump". See the complete file in eliza/characters/trump.character.json. The data is extracted by AI from the tweet archives.
 ``` javascript
 {
     "name": "trump",
@@ -147,10 +158,10 @@ As an example, here is an extract of the character "trump". See the complete fil
     ]
 }
 ``` 
-###	Plugins
-Question to NotebookLM: "*describe the workflow to build a plugin to access Google Earth Engine*"
+###	Plugins (work in progress)
+The question asked to NotebookLM is: "*describe the workflow to build a plugin to access Google Earth Engine*"
 
-Answer:
+NotebookLM's answer is:
 
 The sources do not describe how to build a plugin to access Google Earth Engine. The sources do describe how to build a plugin for the Eliza framework…. They can be used to create custom actions and evaluators.
 
@@ -228,3 +239,5 @@ To understand the source code, instead of reading tens of thousands of lines of 
 -	Add to the sources of the Notebook the local folder that contains the runtime code of Eliza in the Core Package: [*path_to_your_eliza_clone*]/eliza/packages/core/src/runtime.ts.
 -	Add to the sources of the Notebook the local folder that contains the Agent code of Eliza: [*path_to_your_eliza_clone*]/eliza/agent/src/index.ts.
 -	Add to the sources of the Notebook the local folder that contains the example code of an Eliza plugin: [*path_to_your_eliza_clone*]/eliza/ packages/_examples/plugin/src/.
+
+## More to come, stay tuned
