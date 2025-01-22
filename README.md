@@ -13,7 +13,7 @@ The name ElizaOS hints that one can use Eliza framework building blocks to creat
 The current exploration paper is done in the context of the project Machu Picchu, that uses 21st century tools for humanitarian purposes : https://kvutien-yes.medium.com/project-machu-picchu-white-paper-2024-part-1-735b60c55a92
 
 ###	Reminder: what is an agent?
-In its simplest form, which is also the most common usage, an AI agent is (1) a **Finite State Machine**(2)  that uses **Artificial Intelligence** to "understand" events triggering its state transitions. The diagrams below shows an agent in general and an example of state machine controlling a turnstile door. A Finite State Machine can be implemented using simple electrical relays, using no programming. AI-powered agents is the next state beyond "dumb" Finite State Machines. 
+In its simplest form, which is also the most common usage, an AI agent is (1) a **Finite State Machine** (2) that uses **Artificial Intelligence** to "understand" events triggering its state transitions. The diagrams below shows an agent in general and an example of state machine controlling a turnstile door. A Finite State Machine can be implemented using simple electrical relays, using no programming. AI-powered agents is the next state beyond "dumb" Finite State Machines. 
 ![Agent](./images/0-what_is_an_agent.png)
 
 ###	Reminder: potential of AI Agent in the future
@@ -29,6 +29,9 @@ The following drawing, from Eliza documentation, shows the major functional bloc
 
 ### Eliza Execution Workflow
 The following workflow is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.
+- the **Runtime** initializes the agent and manages state transitions
+- the **Agent** uses "**Provider clients**" to detect events, uses AI to match the event with what is programmed in its transition table ("*understand the event*"), updates the memory database, evaluates and launches the appropriate "actions",
+- the **Actions** eventually interact with the external world using Provider clients.
 ![Eliza Execution](./images/4-ElizaOS_Workflow.png)
 
 ## Components of Eliza
@@ -40,7 +43,7 @@ The following workflow is deducted from reading the code of Eliza. It may contai
 ###	IA Variants in Eliza of State Machine Components
 -	**Database Adapter**: additional function to memorize the AI embeddings, the previous responses and their evaluations
 -	**Character System**: personality management. JSON-formatted data to define an AI behavior. Similar to system prompts in a chatbot, serves to the IA model to analyze inputs, generate outputs (state transition and action) and evaluate goal adequation
--	**Client**: interface to social media like Telegram, X/Twitter, or custom external systems
+-	**Provider Client**: interface to social media like Telegram, X/Twitter, or custom external systems
 -	**Model Provider**: defines the IA model to use to infer answers from events (GPT, Claude, Mistral, Llama, DeepSeek, Qwen, Phi-4 etc.)
 -	**Vector database**: stores embeddings of character, inputs, past responses, past states etc.
 -	**Boredom Provider**: calculates the level of boredom of an agent to modulate responses
