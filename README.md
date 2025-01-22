@@ -28,14 +28,14 @@ The following drawing, from Eliza documentation, shows the major functional bloc
 ![Eliza Architecture](./images/2-Eliza_Architecture.png)
 
 ### Eliza Execution Workflow
-The following workflow is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.
+*The following workflow is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.*
 - the **Runtime** initializes the agent and manages state transitions
 - the **Agent** uses "**Provider clients**" to detect events, uses AI to match the event with what is programmed in its transition table ("*understand the event*"), updates the memory database, evaluates and launches the appropriate "actions",
 - the **Actions** eventually interact with the external world using Provider clients.
 ![Eliza Execution](./images/4-ElizaOS_Workflow.png)
 
 ## Components of Eliza
-The following description of components is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.
+*The following description of components is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.*
 ###	Eliza Classical State Machine Components
 -	**Agent runtime**: watches Provider for external events, analyzes input, assesses response, triggers action, manages state transition
 -	**Provider**: injects into Eliza external data and real-time information (events),
