@@ -51,7 +51,7 @@ The following description of components is deducted from reading the code of Eli
 -	**Conversation Flow**: evaluate the appropriateness of actions, modulates responses like ignore input or even terminate conversation
 -	**Evaluator**: determines appropriateness of input, responses with respect to goal and internal ethics
 ###	Eliza Specific Components
--	**Plugins**: extensions to Agent (Evaluator, Action, Character). 
+-	**Plugins**: extensions to Agent {Evaluator, Action, Character}. 
 -	For example, image generator, NodeJS services, manage temporal context, assess factual accuracy of message content, blockchain access, wallet management, DeFi trader, mass payments, fungible and non-fungible tokens, TEE cybersecurity execution environment, webhooks to blockchain events etc.
 ###	Eliza Package Dependencies
 ![Eliza Packages](./images/3-Pack_Depend.png)
