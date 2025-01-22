@@ -3,7 +3,7 @@
 ##	Executive Summary
 This document contains short working notes when studying the AI Agent creation framework named Eliza0S. Its agents can call on blockchain transactions. 
 
-This open-source framework in JavaScript has been released by the DAO ai16z (Decntralized Anonymous Organization) on September 2024 and its github repository has already received more than 14.000 stars beginning January 2025, much faster than any other AI agent frameworks.
+This open-source framework in JavaScript has been released by the DAO ai16z (Decentralized Anonymous Organization) on September 2024 and its github repository has already received more than 14.000 stars beginning January 2025, much faster than any other AI agent frameworks.
 ![Eliza github star history](./images/Eliza_star-history-2025119.png)
 - Source code: https://github.com/elizaos/eliza
 - Documentation: https://elizaos.github.io/eliza/docs/intro/
@@ -13,7 +13,7 @@ The name ElizaOS hints that one can use Eliza framework building blocks to creat
 The current exploration paper is done in the context of the project Machu Picchu, that uses 21st century tools for humanitarian purposes : https://kvutien-yes.medium.com/project-machu-picchu-white-paper-2024-part-1-735b60c55a92
 
 ###	Reminder: what is an agent?
-In its simplest form, which is also the most common usage, an AI agent is (1) a **Finite State Machine** that (2) uses **Artificial Intelligence** to "understand" events triggering its state transitions. The diagrams below shows an agent in general and an example of state machine controlling a turnstile door. A Finite State Machine can be implemented using simple electrical relays, using no programming. AI-powered agents is the next state beyond "dumb" Finite State Machines. 
+In its simplest form, which is also the most common usage, an AI agent is (1) a **Finite State Machine**(2)  that uses **Artificial Intelligence** to "understand" events triggering its state transitions. The diagrams below shows an agent in general and an example of state machine controlling a turnstile door. A Finite State Machine can be implemented using simple electrical relays, using no programming. AI-powered agents is the next state beyond "dumb" Finite State Machines. 
 ![Agent](./images/0-what_is_an_agent.png)
 
 ###	Reminder: potential of AI Agent in the future
