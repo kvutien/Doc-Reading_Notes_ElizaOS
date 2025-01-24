@@ -12,24 +12,24 @@ The name ElizaOS hints that one can use Eliza framework building blocks to creat
 
 The current exploration paper is done in the context of the project Machu Picchu, that uses 21st century tools for humanitarian purposes : https://kvutien-yes.medium.com/project-machu-picchu-white-paper-2024-part-1-735b60c55a92
 
-###	Reminder: what is an agent?
+### 0.1-Reminder: what is an agent?
 In its simplest form, which is also the most common usage, an AI agent is (1) a **Finite State Machine** (2) that uses **Artificial Intelligence** to "understand" events triggering its state transitions. A Finite State Machine can be implemented using simple electrical relays, using no programming. AI-powered agents is the next state beyond "dumb" Finite State Machines.
 
 The diagrams below shows an agent in general and an example of state machine controlling a turnstile door.  
 ![Agent](./images/0-what_is_an_agent.png)
 
-###	Reminder: potential of AI Agent in the future
+### 0.2-Reminder: potential of AI Agent in the future
 The next step of AI agents is often presented as **AGI** (Artificial General Intelligence) and **ASI** (Artificial Superior Intelligence). These are marketing names to designate broadly State Machines that remember previous transitions, evaluate past results and compare with a goal, eventually change the evaluation functions used to reach the goal or even decide to change intermediate goals (the transition table) to fulfill a larger planning strategy. In short, they would replace humans and be better in executing their mission. 
 
 Such machines are far from being convincingly achieved. However, Eliza is one step forward towards AGI.
 ![AI Agent](./images/1-AI_Update_2024.png)
 
 ## 1-Eliza High Level Architecture and Workflow
-### Eliza major functional blocks
+### 1.1-Eliza major functional blocks
 The following drawing, taken from Eliza documentation, shows the major functional blocks of Eliza.
 ![Eliza Architecture](./images/2-Eliza_Architecture.png)
 
-### Eliza Execution Workflow
+### 1.2-Eliza Execution Workflow
 *The following workflow is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.*
 - the **Runtime** initializes the agent and manages state transitions
 - the **Agent** uses **Provider clients** to detect events, uses AI to match the event with what is programmed in its transition table (matching = "*understand*" the event), updates the memory database, evaluates and launches the appropriate **Actions**,
@@ -38,12 +38,12 @@ The following drawing, taken from Eliza documentation, shows the major functiona
 
 ## 2-Components of Eliza
 *The following description of components is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.*
-###	Classical Eliza State Machine Components
+### 2.1-Classical Eliza State Machine Components
 -	**Agent runtime**: watches Provider for external events, analyzes input, assesses response, triggers action, manages state transition
 -	**Provider**: injects into Eliza external data and real-time information (events),
 -	**Action System**: extensible system to customize the agent
 -	**Database Adapter**: memorizes the state
-###	IA Variants in Eliza of State Machine Components
+### 2.2-IA Variants in Eliza of State Machine Components
 -	**Database Adapter**: additional function to memorize the previous AI embeddings, i.e. vector representations of the previous events, inputs, responses and response evaluations
 -	**Character System**: personality management. JSON-formatted data to define an AI behavior. Similar to system prompts in a chatbot, serves to the IA model to analyze inputs, generate outputs (state transition and action) and evaluate goal adequation
 -	**Provider Client**: interface to social media like Telegram, X/Twitter, or custom external systems
@@ -52,10 +52,10 @@ The following drawing, taken from Eliza documentation, shows the major functiona
 -	**Boredom Provider**: calculates the level of boredom of an agent to modulate responses
 -	**Conversation Flow**: evaluate the appropriateness of actions, modulates responses like ignore input or even terminate conversation
 -	**Evaluator**: determines appropriateness of input, responses with respect to goal and internal ethics
-###	Eliza Specific Components
+### 2.3-Eliza Specific Components
 -	**Plugins**: extensions to Agent {Evaluator, Action, Character}. 
 -	For example, image generator, NodeJS services, manage temporal context, assess factual accuracy of message content, blockchain access, wallet management, DeFi trader, mass payments, fungible and non-fungible tokens, TEE cybersecurity execution environment, webhooks to blockchain events etc.
-###	Eliza Package Dependencies
+### 2.4-Eliza Package Dependencies
 ![Eliza Packages](./images/3-Pack_Depend.png)
 
 ## 3-Development using Eliza Framework
@@ -64,7 +64,7 @@ The following drawing, taken from Eliza documentation, shows the major functiona
 **Disclaimer**: This is not yet a programming tutorial, but are only reading notes. A tutorial will be written after some development done with the framework.
 
 The following reading notes were written using human intelligence, supported by the AI tool Google NotebookLM: https://notebooklm.google.com/
-###	Deployment of pre-built Agents
+### 3.1-Deployment of pre-built Agents
 Among the illustrative AI agents that ai16z team has built using Eliza, there are an AI agent doing DeFi trading on the Solana blockchain and an AI agent to post on Twitter. Based on these examples, other agents can be developed to accomplish other tasks.
 
 The repository https://github.com/elizaos/eliza-starter.git deploys locally in Docker an agent to post tweets. There has been a lot of YouTube videos showing this process. The deployment script is very clean and deploys inside a Docker virtual machine so that the demo agent does not pollute your local machine. 
@@ -78,7 +78,7 @@ The README file of the Eliza repository (https://github.com/elizaOS/eliza/tree/d
 -	**Add as sources** of the Notebook the web pages that describe the Packages of Eliza: https://elizaos.github.io/eliza/docs/packages/ and succeeding pages: Core Package, Database Adapter Package, Client Packages, Agent Packages, Plugin System Packages.
 -	From these sources, you can **ask NotebookLM to explain** each step in the README file and install and run a Tweeter pre-built agent. Alternatively, there are also many YouTube videos showing that.
 
-###	Agents Customization – Configuration Parameters
+### 3.2-Agents Customization – Configuration Parameters
 Once comfortable with the starter agent, you can start making your own custom agent. The easiest customization of an Eliza agent is its **character**. This is reminiscent of the "system prompt" in a chatbot. This system prompt is prefixed to each further prompt to modulate the chatbot resulting answer.
 
 When creating a new ``AgentRuntime`` instance, the character configuration is read as a parameter, as shown in this example:
@@ -192,7 +192,7 @@ interface Plugin {
     services?: Service[]; // Additional services (optional)
 }
 ``` 
-###	Writing Custom Plugins
+### 4.1-Writing Custom Plugins
 Create a new plugin by implementing the Plugin interface:
 ``` javascript
 import { Plugin, Action, Evaluator, Provider } from "@elizaos/core";
@@ -214,24 +214,24 @@ const myCustomPlugin: Plugin = {
     ],
 };
 ``` 
-###	Plugin Development Guidelines – Action Development
+### 4.2-Plugin Development Guidelines – Action Development
 -	Implement the ``Action`` interface
 -	Provide clear validation logic
 -	Include usage examples
 -	Handle errors gracefully
-###	Plugin Development Guidelines – Evaluator Development
+### 4.3-Plugin Development Guidelines – Evaluator Development
 -	Implement the ``Evaluator`` interface
 -	Define clear evaluation criteria
 -	Include validation logic
 -	Document evaluation metrics
-###	Plugin Development Guidelines – Provider Development
+### 4.4-Plugin Development Guidelines – Provider Development
 -	Implement the ``Provider`` interface
 -	Define context generation logic
 -	Handle state management
 -	Document provider capabilities
 
 ## 5-Eliza Code Examples
-###	Plugin Development Example Source
+### 5.1-Plugin Development Example Source
 To understand the source code, instead of reading tens of thousands of lines of TypeScript, we can feed them also to NotebookLM and ask questions. But NotebookLM cannot import directly the github web site nor your local file system. The solution is to let NotebookLM import from Google Drive.
 
 To add the TypeScript code to NotebookLM, we do the following:
@@ -250,4 +250,4 @@ To add the TypeScript code to NotebookLM, we do the following:
 -	Add to the sources of the Notebook the local folder that contains the Agent code of Eliza: [*path_to_your_Google_drive_eliza_clone*]/eliza/agent/src/index.ts.
 -	Add to the sources of the Notebook the local folder that contains the example code of an Eliza plugin: [*path_to_your_Google_drive_eliza_clone*]/eliza/ packages/_examples/plugin/src/.
 
-## More to come, stay tuned
+## *More to come, stay tuned*
