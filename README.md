@@ -13,9 +13,9 @@ The name ElizaOS hints that one can use Eliza framework building blocks to creat
 The current exploration paper is done in the context of the project Machu Picchu, that uses 21st century tools for humanitarian purposes : https://kvutien-yes.medium.com/project-machu-picchu-white-paper-2024-part-1-735b60c55a92
 
 ###	Reminder: what is an agent?
-In its simplest form, which is also the most common usage, an AI agent is (1) a **Finite State Machine** (2) that uses **Artificial Intelligence** to "understand" events triggering its state transitions. The diagrams below shows an agent in general and an example of state machine controlling a turnstile door. 
+In its simplest form, which is also the most common usage, an AI agent is (1) a **Finite State Machine** (2) that uses **Artificial Intelligence** to "understand" events triggering its state transitions. A Finite State Machine can be implemented using simple electrical relays, using no programming. AI-powered agents is the next state beyond "dumb" Finite State Machines.
 
-A Finite State Machine can be implemented using simple electrical relays, using no programming. AI-powered agents is the next state beyond "dumb" Finite State Machines. 
+The diagrams below shows an agent in general and an example of state machine controlling a turnstile door.  
 ![Agent](./images/0-what_is_an_agent.png)
 
 ###	Reminder: potential of AI Agent in the future
