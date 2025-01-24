@@ -232,14 +232,16 @@ const myCustomPlugin: Plugin = {
 
 ##	Eliza Code Examples
 ###	Plugin Development Example Source
-To understand the source code, instead of reading tens of thousands of lines of JavaScript, we can feed them also to NotebookLM and ask questions. In addition to the Notebook's sources above we can add the following:
--	Clone in your local Google Drive the Eliza repository https://github.com/elizaOS/eliza/tree/develop. This is necessary to add to the NotebookLM sources the Eliza code because NotebookLM cannot read directly the github web site nor your local file system. The solution is to let NotebookLM import from Google Drive.
-    -	Make sure you have git and Google Drive in your local disk *.
+To understand the source code, instead of reading tens of thousands of lines of JavaScript, we can feed them also to NotebookLM and ask questions. But NotebookLM cannot read directly the github web site nor your local file system. The solution is to let NotebookLM import from Google Drive.
+
+To add the TypeScript code to NotebookLM, we do the following:
+-	Clone the Eliza repository https://github.com/elizaOS/eliza/tree/develop in your local Google Drive 
+    -	Make sure you have git and Google Drive in your local disk (*).
     -	Then open your Terminal window
     -	Navigate to your local Google Drive folder: ``cd ~/Google\ Drive``
     -	Clone the repository: ``git clone https://github.com/elizaOS/eliza/tree/develop``
     -	Navigate to the cloned folder: ``cd eliza``
--	*Here is how to have Google Drive locally for macOS (for Windows and Linus, ask your chatbot)
+-	(*) Here is how to have Google Drive locally, for macOS (for Windows and Linus, ask your chatbot)
     -	Download Google Drive for Desktop at: https://www.google.com/drive/download/ 
     -	Install using the image installer
     -	Sign in to your Google Drive account 
