@@ -166,7 +166,7 @@ As an example, here is an extract of the character "trump". See the complete fil
     ]
 }
 ``` 
-###	Plugins (work in progress)
+## 4-Plugins (work in progress)
 The question asked to NotebookLM is: "*describe the workflow to build a plugin to access Google Earth Engine*"
 
 NotebookLM's answer is:
@@ -180,7 +180,7 @@ The sources contain information on best practices for plugin development, includ
 The sources contain examples of existing plugins that might be helpful in developing a custom plugin to access Google Earth Engine. The Node plugin provides core Node.js-based services, including web browsing capabilities, image analysis, and video processing. This plugin could be used as a starting point for accessing Google Earth Engine, which has a JavaScript API.
 
 The following texts are copied from the Eliza documentation site.
-####	Core Plugin Concepts – Plugin Structure
+###	Core Plugin Concepts – Plugin Structure
 Each plugin in Eliza must implement the Plugin interface with the following properties:
 ``` javascript
 interface Plugin {
@@ -192,7 +192,7 @@ interface Plugin {
     services?: Service[]; // Additional services (optional)
 }
 ``` 
-####	Writing Custom Plugins
+###	Writing Custom Plugins
 Create a new plugin by implementing the Plugin interface:
 ``` javascript
 import { Plugin, Action, Evaluator, Provider } from "@elizaos/core";
@@ -214,23 +214,23 @@ const myCustomPlugin: Plugin = {
     ],
 };
 ``` 
-####	Plugin Development Guidelines – Action Development
+###	Plugin Development Guidelines – Action Development
 -	Implement the ``Action`` interface
 -	Provide clear validation logic
 -	Include usage examples
 -	Handle errors gracefully
-####	Plugin Development Guidelines – Evaluator Development
+###	Plugin Development Guidelines – Evaluator Development
 -	Implement the ``Evaluator`` interface
 -	Define clear evaluation criteria
 -	Include validation logic
 -	Document evaluation metrics
-####	Plugin Development Guidelines – Provider Development
+###	Plugin Development Guidelines – Provider Development
 -	Implement the ``Provider`` interface
 -	Define context generation logic
 -	Handle state management
 -	Document provider capabilities
 
-## 4-Eliza Code Examples
+## 5-Eliza Code Examples
 ###	Plugin Development Example Source
 To understand the source code, instead of reading tens of thousands of lines of TypeScript, we can feed them also to NotebookLM and ask questions. But NotebookLM cannot import directly the github web site nor your local file system. The solution is to let NotebookLM import from Google Drive.
 
