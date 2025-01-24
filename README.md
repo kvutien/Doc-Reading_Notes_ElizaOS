@@ -180,7 +180,7 @@ The sources contain information on best practices for plugin development, includ
 The sources contain examples of existing plugins that might be helpful in developing a custom plugin to access Google Earth Engine. The Node plugin provides core Node.js-based services, including web browsing capabilities, image analysis, and video processing. This plugin could be used as a starting point for accessing Google Earth Engine, which has a JavaScript API.
 
 The following texts are copied from the Eliza documentation site.
-###	Core Plugin Concepts – Plugin Structure
+### 4.1-Core Plugin Concepts – Plugin Structure
 Each plugin in Eliza must implement the Plugin interface with the following properties:
 ``` javascript
 interface Plugin {
@@ -192,7 +192,7 @@ interface Plugin {
     services?: Service[]; // Additional services (optional)
 }
 ``` 
-### 4.1-Writing Custom Plugins
+### 4.2-Writing Custom Plugins
 Create a new plugin by implementing the Plugin interface:
 ``` javascript
 import { Plugin, Action, Evaluator, Provider } from "@elizaos/core";
@@ -214,17 +214,17 @@ const myCustomPlugin: Plugin = {
     ],
 };
 ``` 
-### 4.2-Plugin Development Guidelines – Action Development
+### 4.3-Plugin Development Guidelines – Action Development
 -	Implement the ``Action`` interface
 -	Provide clear validation logic
 -	Include usage examples
 -	Handle errors gracefully
-### 4.3-Plugin Development Guidelines – Evaluator Development
+### 4.4-Plugin Development Guidelines – Evaluator Development
 -	Implement the ``Evaluator`` interface
 -	Define clear evaluation criteria
 -	Include validation logic
 -	Document evaluation metrics
-### 4.4-Plugin Development Guidelines – Provider Development
+### 4.5-Plugin Development Guidelines – Provider Development
 -	Implement the ``Provider`` interface
 -	Define context generation logic
 -	Handle state management
