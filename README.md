@@ -1,6 +1,6 @@
 # Reading Notes of ElizaOS
 (Jan 2025)
-##	Executive Summary
+##	0-Executive Summary
 This document contains short working notes when studying the AI Agent creation framework named Eliza0S. Its agents can call on blockchain transactions. 
 
 This open-source framework in JavaScript has been released by the DAO (Decentralized Anonymous Organization) named ai16z, on September 2024. Its github repository has already received more than 14.000 stars beginning January 2025, much faster than any other AI agent frameworks.
@@ -24,7 +24,7 @@ The next step of AI agents is often presented as **AGI** (Artificial General Int
 Such machines are far from being convincingly achieved. However, Eliza is one step forward towards AGI.
 ![AI Agent](./images/1-AI_Update_2024.png)
 
-## Eliza High Level Architecture and Workflow
+## 1-Eliza High Level Architecture and Workflow
 ### Eliza major functional blocks
 The following drawing, taken from Eliza documentation, shows the major functional blocks of Eliza.
 ![Eliza Architecture](./images/2-Eliza_Architecture.png)
@@ -36,7 +36,7 @@ The following drawing, taken from Eliza documentation, shows the major functiona
 - the **Actions** eventually interact with the external world using Provider clients.
 ![Eliza Execution](./images/4-ElizaOS_Workflow.png)
 
-## Components of Eliza
+## 2-Components of Eliza
 *The following description of components is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.*
 ###	Classical Eliza State Machine Components
 -	**Agent runtime**: watches Provider for external events, analyzes input, assesses response, triggers action, manages state transition
@@ -58,7 +58,7 @@ The following drawing, taken from Eliza documentation, shows the major functiona
 ###	Eliza Package Dependencies
 ![Eliza Packages](./images/3-Pack_Depend.png)
 
-##	 Development using Eliza Framework
+## 3-Development using Eliza Framework
 *If you don't intend to customize an agent using Eliza, you can stop reading here.*
 
 **Disclaimer**: This is not yet a programming tutorial, but are only reading notes. A tutorial will be written after some development done with the framework.
@@ -230,7 +230,7 @@ const myCustomPlugin: Plugin = {
 -	Handle state management
 -	Document provider capabilities
 
-##	Eliza Code Examples
+## 4-Eliza Code Examples
 ###	Plugin Development Example Source
 To understand the source code, instead of reading tens of thousands of lines of TypeScript, we can feed them also to NotebookLM and ask questions. But NotebookLM cannot import directly the github web site nor your local file system. The solution is to let NotebookLM import from Google Drive.
 
