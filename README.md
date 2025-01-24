@@ -19,7 +19,7 @@ The diagrams below shows an agent in general and an example of state machine con
 ![Agent](./images/0-what_is_an_agent.png)
 
 ###	Reminder: potential of AI Agent in the future
-The next step of AI agents is often presented as AGI (Artificial General Intelligence) and ASI (Artificial Superior Intelligence). They are State Machines that remember previous transitions, evaluate past results and compare with a goal, eventually change the evaluation functions used to reach the goal or even decide to change intermediate goals (the transition table) to fulfill a larger planning strategy. In short, they would replace humans and be better in executing their mission. 
+The next step of AI agents is often presented as AGI (Artificial General Intelligence) and ASI (Artificial Superior Intelligence). These are marketing names to designate vaguely State Machines that remember previous transitions, evaluate past results and compare with a goal, eventually change the evaluation functions used to reach the goal or even decide to change intermediate goals (the transition table) to fulfill a larger planning strategy. In short, they would replace humans and be better in executing their mission. 
 
 Such machines are far from being convincingly achieved. However, Eliza is one step forward towards AGI.
 ![AI Agent](./images/1-AI_Update_2024.png)
