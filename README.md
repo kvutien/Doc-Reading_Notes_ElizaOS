@@ -19,20 +19,20 @@ The diagrams below shows an agent in general and an example of state machine con
 ![Agent](./images/0-what_is_an_agent.png)
 
 ###	Reminder: potential of AI Agent in the future
-The next step of AI agents is often presented as AGI (Artificial General Intelligence) and ASI (Artificial Superior Intelligence). These are marketing names to designate vaguely State Machines that remember previous transitions, evaluate past results and compare with a goal, eventually change the evaluation functions used to reach the goal or even decide to change intermediate goals (the transition table) to fulfill a larger planning strategy. In short, they would replace humans and be better in executing their mission. 
+The next step of AI agents is often presented as **AGI** (Artificial General Intelligence) and **ASI** (Artificial Superior Intelligence). These are marketing names to designate broadly State Machines that remember previous transitions, evaluate past results and compare with a goal, eventually change the evaluation functions used to reach the goal or even decide to change intermediate goals (the transition table) to fulfill a larger planning strategy. In short, they would replace humans and be better in executing their mission. 
 
 Such machines are far from being convincingly achieved. However, Eliza is one step forward towards AGI.
 ![AI Agent](./images/1-AI_Update_2024.png)
 
 ## Eliza High Level Architecture and Workflow
 ### Eliza major functional blocks
-The following drawing, from Eliza documentation, shows the major functional blocks of Eliza.
+The following drawing, taken from Eliza documentation, shows the major functional blocks of Eliza.
 ![Eliza Architecture](./images/2-Eliza_Architecture.png)
 
 ### Eliza Execution Workflow
 *The following workflow is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.*
 - the **Runtime** initializes the agent and manages state transitions
-- the **Agent** uses "**Provider clients**" to detect events, uses AI to match the event with what is programmed in its transition table ("*understand the event*"), updates the memory database, evaluates and launches the appropriate "actions",
+- the **Agent** uses **Provider clients** to detect events, uses AI to match the event with what is programmed in its transition table ("*understand the event*"), updates the memory database, evaluates and launches the appropriate **Actions**,
 - the **Actions** eventually interact with the external world using Provider clients.
 ![Eliza Execution](./images/4-ElizaOS_Workflow.png)
 
