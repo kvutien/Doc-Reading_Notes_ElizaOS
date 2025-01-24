@@ -59,6 +59,8 @@ The following drawing, taken from Eliza documentation, shows the major functiona
 ![Eliza Packages](./images/3-Pack_Depend.png)
 
 ##	 Development using Eliza Framework
+*If you don't intend to customize an agent using Eliza, you can stop reading here.*
+
 **Disclaimer**: This is not yet a programming tutorial, but are only reading notes. A tutorial will be written after some development done with the framework.
 
 The following reading notes were written using human intelligence, supported by the AI tool Google NotebookLM: https://notebooklm.google.com/
@@ -77,7 +79,7 @@ The README file of the Eliza repository (https://github.com/elizaOS/eliza/tree/d
 -	From these sources, you can **ask NotebookLM to explain** each step in the README file and install and run a Tweeter pre-built agent. Alternatively, there are also many YouTube videos showing that.
 
 ###	Agents Customization – Configuration Parameters
-Once comfortable with the starter agent, you can start making your own custom agent. The easiest customization of an Eliza agent is its character. This is reminiscent of the "system prompt" in a chatbot that is prefixed to each further prompt to modulate the chatbot resulting answer.
+Once comfortable with the starter agent, you can start making your own custom agent. The easiest customization of an Eliza agent is its **character**. This is reminiscent of the "system prompt" in a chatbot. This system prompt is prefixed to each further prompt to modulate the chatbot resulting answer.
 
 When creating a new ``AgentRuntime`` instance, the character configuration is read as a parameter, as shown in this example:
 ``` javascript
