@@ -32,7 +32,7 @@ The following drawing, taken from Eliza documentation, shows the major functiona
 ### Eliza Execution Workflow
 *The following workflow is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.*
 - the **Runtime** initializes the agent and manages state transitions
-- the **Agent** uses **Provider clients** to detect events, uses AI to match the event with what is programmed in its transition table ("*understand the event*"), updates the memory database, evaluates and launches the appropriate **Actions**,
+- the **Agent** uses **Provider clients** to detect events, uses AI to match the event with what is programmed in its transition table (matching = "*understand*" the event), updates the memory database, evaluates and launches the appropriate **Actions**,
 - the **Actions** eventually interact with the external world using Provider clients.
 ![Eliza Execution](./images/4-ElizaOS_Workflow.png)
 
