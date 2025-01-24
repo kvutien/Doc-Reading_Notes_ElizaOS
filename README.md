@@ -3,7 +3,7 @@
 ##	0-Executive Summary
 This document contains short working notes when studying the AI Agent creation framework named Eliza0S. Its agents can call on blockchain transactions. 
 
-This open-source framework in JavaScript has been released by the DAO (Decentralized Anonymous Organization) named ai16z, on September 2024. Its github repository has already received more than 14.000 stars beginning January 2025, much faster than any other AI agent frameworks.
+This open-source framework in TypeScript has been released by the DAO (Decentralized Anonymous Organization) named ai16z, on September 2024. Its github repository has already received more than 14.000 stars beginning January 2025, much faster than any other AI agent frameworks.
 ![Eliza github star history](./images/Eliza_star-history-2025119.png)
 - Source code: https://github.com/elizaos/eliza
 - Documentation: https://elizaos.github.io/eliza/docs/intro/
