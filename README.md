@@ -59,7 +59,7 @@ The following drawing, taken from Eliza documentation, shows the major functiona
 ![Eliza Packages](./images/3-Pack_Depend.png)
 
 ## 3-Development using Eliza Framework
-*If you don't intend to customize an agent using Eliza, you can stop reading here.*
+*If you don't intend to customize an agent using Eliza, **you can stop reading here**.*
 
 **Disclaimer**: This is not yet a programming tutorial, but are only reading notes. A tutorial will be written after some development done with the framework.
 
