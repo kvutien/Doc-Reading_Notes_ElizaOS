@@ -232,7 +232,7 @@ const myCustomPlugin: Plugin = {
 
 ##	Eliza Code Examples
 ###	Plugin Development Example Source
-To understand the source code, instead of reading tens of thousands of lines of JavaScript, we can feed them also to NotebookLM and ask questions. But NotebookLM cannot read directly the github web site nor your local file system. The solution is to let NotebookLM import from Google Drive.
+To understand the source code, instead of reading tens of thousands of lines of TypeScript, we can feed them also to NotebookLM and ask questions. But NotebookLM cannot import directly the github web site nor your local file system. The solution is to let NotebookLM import from Google Drive.
 
 To add the TypeScript code to NotebookLM, we do the following:
 -	Clone the Eliza repository https://github.com/elizaOS/eliza/tree/develop in your local Google Drive 
@@ -246,8 +246,8 @@ To add the TypeScript code to NotebookLM, we do the following:
     -	Install using the image installer
     -	Sign in to your Google Drive account 
     -	Choose sync preference as mirror files to have access locally
--	Add to the sources of the Notebook the local folder that contains the runtime code of Eliza in the Core Package: [*path_to_your_eliza_clone*]/eliza/packages/core/src/runtime.ts.
--	Add to the sources of the Notebook the local folder that contains the Agent code of Eliza: [*path_to_your_eliza_clone*]/eliza/agent/src/index.ts.
--	Add to the sources of the Notebook the local folder that contains the example code of an Eliza plugin: [*path_to_your_eliza_clone*]/eliza/ packages/_examples/plugin/src/.
+-	Add to the sources of the Notebook the local folder that contains the runtime code of Eliza in the Core Package: [*path_to_your_Google_drive_eliza_clone*]/eliza/packages/core/src/runtime.ts.
+-	Add to the sources of the Notebook the local folder that contains the Agent code of Eliza: [*path_to_your_Google_drive_eliza_clone*]/eliza/agent/src/index.ts.
+-	Add to the sources of the Notebook the local folder that contains the example code of an Eliza plugin: [*path_to_your_Google_drive_eliza_clone*]/eliza/ packages/_examples/plugin/src/.
 
 ## More to come, stay tuned
