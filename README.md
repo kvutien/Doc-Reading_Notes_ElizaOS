@@ -70,7 +70,7 @@ The repository https://github.com/elizaos/eliza-starter.git deploys locally in D
 You can execute blindly the instructions. However, if you want to understand what you are doing, here is how.
 
 The README file of the Eliza repository (https://github.com/elizaOS/eliza/tree/develop) explains how to deploy the starter Twitter agent step by step. We will not explain each step but instead will describe how you can make NotebookLM explain it.
--	In your browser, **open NotebookLM** using the link above. 
+-	In your browser, **open NotebookLM** using [the link above](https://notebooklm.google.com/). 
 -	Create a **new Notebook**.
 -	**Add as sources** of the Notebook the web pages that describe the Core Concepts of Eliza (https://elizaos.github.io/eliza/docs/core/characterfile/) and succeeding web pages: Agents, Providers, Actions
 -	**Add as sources** of the Notebook the web pages that describe the Packages of Eliza: https://elizaos.github.io/eliza/docs/packages/ and succeeding pages: Core Package, Database Adapter Package, Client Packages, Agent Packages, Plugin System Packages.
