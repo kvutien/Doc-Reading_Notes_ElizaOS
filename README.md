@@ -38,13 +38,13 @@ The following drawing, taken from Eliza documentation, shows the major functiona
 
 ## Components of Eliza
 *The following description of components is deducted from reading the code of Eliza. It may contain inaccuracies and will be modified if appropriate.*
-###	Eliza Classical State Machine Components
+###	Classical Eliza State Machine Components
 -	**Agent runtime**: watches Provider for external events, analyzes input, assesses response, triggers action, manages state transition
 -	**Provider**: injects into Eliza external data and real-time information (events),
 -	**Action System**: extensible system to customize the agent
 -	**Database Adapter**: memorizes the state
 ###	IA Variants in Eliza of State Machine Components
--	**Database Adapter**: additional function to memorize the AI embeddings, the previous responses and their evaluations
+-	**Database Adapter**: additional function to memorize the previous AI embeddings, i.e. vector representations of the previous events, inputs, responses and response evaluations
 -	**Character System**: personality management. JSON-formatted data to define an AI behavior. Similar to system prompts in a chatbot, serves to the IA model to analyze inputs, generate outputs (state transition and action) and evaluate goal adequation
 -	**Provider Client**: interface to social media like Telegram, X/Twitter, or custom external systems
 -	**Model Provider**: defines the IA model to use to infer answers from events (GPT, Claude, Mistral, Llama, DeepSeek, Qwen, Phi-4 etc.)
