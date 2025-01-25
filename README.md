@@ -105,6 +105,7 @@ Each key in this JSON object characterConfig represents a specific aspect of the
 -	"**style**": Guidelines for the character's communication style across different contexts.
 -	"**adjectives**": Words that describe the character's traits.
 -	"**settings**": Additional configuration settings, such as model specifications and voice settings.
+
 As an example, here is an extract of the character "trump". See the complete file in eliza/characters/trump.character.json. The data is extracted by AI from the tweet archives.
 ``` javascript
 {
