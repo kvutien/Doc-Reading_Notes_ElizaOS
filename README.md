@@ -242,7 +242,7 @@ To add the TypeScript code to NotebookLM, we do the following:
     -	Navigate to your local Google Drive folder: ``cd ~/Google\ Drive``
     -	Clone the repository: ``git clone https://github.com/elizaOS/eliza/tree/develop``
     -	Navigate to the cloned folder: ``cd eliza``
--	(*) Here is how to have Google Drive locally, for macOS (for Windows and Linus, ask your chatbot)
+-	(*) Here is how to have Google Drive locally, for macOS (for Windows and Linux, ask your chatbot)
     -	Download Google Drive for Desktop at: https://www.google.com/drive/download/ 
     -	Install using the image installer
     -	Sign in to your Google Drive account 
